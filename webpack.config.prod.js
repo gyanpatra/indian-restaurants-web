@@ -38,7 +38,13 @@ export default {
       { test: /\.scss?$/,
         loader: 'style!css!sass',
         include: path.join(__dirname, 'src', 'styles') },
-      { test: /\.png$/,
+      {
+        test: /\.min.css?$/,
+        loader: 'style!css!',
+        include: path.join(__dirname, 'src', 'styles'),
+        use: [ 'style-loader', 'css-loader' ]
+      }, {
+        test: /\.png$/,
         loader: 'file' },
       { test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
         loader: 'file'}
