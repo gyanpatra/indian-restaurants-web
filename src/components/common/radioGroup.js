@@ -1,12 +1,22 @@
 import React, {PropTypes} from 'react';
 
 const RadioGroup = ({label, cusineTypes, handleChange}) => (
-  <div className="field">
-     <div>
-       <label>{label}</label>
-        {cusineTypes.map((cusineType, i) => <input type="radio" name="cusineType" value={cusineType} key={i}>{cusineType}</input>)}
-     </div>
-   </div>
+  <div className="col-lg-2">
+       <label className="radioLabel">{label}</label>
+        {cusineTypes.map((cusineType, i) => {
+          let checked = "false";
+          if( i == 0) {
+            checked = "checked";
+          }
+          return (
+            <div key={i}>
+              <input type="radio" className="radioButton" name="cusineType" checked={checked} value={cusineType} key={i}>{cusineType}</input>
+              <br />
+            </div>
+          );
+        }
+      )}
+  </div>
 );
 
 RadioGroup.propTypes = {
@@ -17,7 +27,7 @@ handleChange: PropTypes.func
 
 RadioGroup.defaultProps = {
   label: "Select The Cusine",
-  cusineTypes: ["Indian", "Chineese"]
+  cusineTypes: ["Chinese", "Indian"]
 };
 
 export default RadioGroup;

@@ -23,6 +23,10 @@ app.use(require('webpack-hot-middleware')(compiler));
 // app.use(favicon(__dirname + '/assets/public/favicon.ico'));
 app.use(favicon(path.join(__dirname,'assets','public','favicon.ico')));
 
+app.get('/api/shops', (req, res) => {
+  console.log("In /api/shops");
+});
+
 app.get('*', function(req, res) {
   res.sendFile(path.join( __dirname, '../src/index.html'));
 });

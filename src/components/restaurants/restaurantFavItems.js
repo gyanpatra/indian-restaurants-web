@@ -1,9 +1,9 @@
 import React, {PropTypes} from 'react';
 
-const RestaurantFavItem = ({restaurantName, favItems}) => (
+const RestaurantFavItem = ({name, favItems}) => (
   <div className="container">
     <div className="red">
-      <label>{restaurantName}</label>
+      <label>{name}</label>
     </div>
     <div className="blue">
       <ul>
@@ -14,13 +14,13 @@ const RestaurantFavItem = ({restaurantName, favItems}) => (
 );
 
 RestaurantFavItem.propTypes = {
-restaurantName: PropTypes.string,
-favItems: PropTypes.array.isRequired,
+name: PropTypes.string,
+favItems: PropTypes.array,
 handleChange: PropTypes.func
 };
 
 RestaurantFavItem.defaultProps = {
-  restaurantName: "Saravana Bhavan",
+  name: "Saravana Bhavan",
   favItems: ["Idly", "Dosa"]
 };
 

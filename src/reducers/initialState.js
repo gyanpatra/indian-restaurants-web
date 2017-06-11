@@ -10,5 +10,7 @@
 
 export default {
   cats: [],
-  hobbies: []
+  hobbies: [],
+  geolocation: {},
+  restaurants: []
 }

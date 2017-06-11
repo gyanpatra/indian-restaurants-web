@@ -1,11 +1,10 @@
 import {combineReducers} from 'redux';
-import cats from './catReducer';
-import hobbies from './hobbyReducer';
+import geolocation from "./geolocation";
+import restaurantsInfo from "./restaurantReducer";
 
 const rootReducer = combineReducers({
-  // short hand property names
-  cats,
-  hobbies
-})
+  geolocation,
+  restaurantsInfo
+});
 
 export default rootReducer;

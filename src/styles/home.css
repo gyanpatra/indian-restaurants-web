@@ -1,0 +1,49 @@
+.container {
+    position: relative;
+    width: 400px;
+    border-style: solid;
+    margin-bottom: 20px;
+}
+.red {
+
+
+    margin: 5px auto;
+    border-bottom-style: solid;
+    border-color: orange;
+}
+.blue {
+    margin: 5px auto;
+}
+.foodiesImages {
+  float: left;
+}
+.foodiesImage {
+  float: left;
+  padding: 40px;
+}
+.aboutWebsite{
+  float: left;
+}
+.restaurantsControlBox{
+  float: left;
+  padding-right: 100px;
+  width: 100%;
+}
+.headerTitle {
+  text-align: center;
+}
+.navMenu {
+  text-align: center;
+}
+.radioButton {
+  padding: 10px;
+}
+.radio-group{
+  display:inline-block
+}
+.radioLabel {
+  vertical-align:top;
+}
+input[type="radio"] {
+  margin-right: 10px;
+}

@@ -1,13 +1,11 @@
 import React, {PropTypes} from 'react';
 
 const SelectBox = ({label, milesOptions, handleChange}) => (
-  <div className="field">
-     <div>
+  <div className="col-lg-2">
        <label>{label}</label>
        <select name="milesSelector">
           {milesOptions.map((mileOption, i) => <option value={mileOption} key={i}>{mileOption}</option>)}
        </select>
-     </div>
    </div>
 );
 

@@ -2,14 +2,19 @@ import * as types from './actionTypes';
 import RestaurantsApi from '../api/restaurantsApi';
 
 
-export function getRestaurantsForGivenGeoSuccess(responseRestaurants) {
-  return {type: types.GET_RESTAURANTS_FOR_GEO_SUCCESS, responseRestaurants}
+export function getRestaurantsForGivenGeoSuccess(responseRestaurants, geoInfo) {
+  return {
+    type: types.GET_RESTAURANTS_FOR_GEO_SUCCESS,
+    restaurants: responseRestaurants,
+    geoInfo: geoInfo
+  }
 }
 
-export function getRestaurantsForGivenGeo(geoInfo) {
-  return function (dispatch) {
-    return RestaurantsApi.getRestaurantsForGivenGeo(geoInfo).then(responseRestaurants => {
-      dispatch(getRestaurantsForGivenGeoSuccess(responseRestaurants));
+export function getRestaurantsForGivenGeo(latitude, longitude) {
+  return (dispatch, getState) => {
+    return RestaurantsApi.getRestaurantsForGivenGeo({latitude, longitude}).then(responseRestaurants => {
+      dispatch(getRestaurantsForGivenGeoSuccess(responseRestaurants, {latitude, longitude}));
+
       return responseRestaurants;
     }).catch(error => {
       throw(error);
