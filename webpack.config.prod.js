@@ -39,6 +39,12 @@ export default {
         loader: 'style!css!sass',
         include: path.join(__dirname, 'src', 'styles') },
       {
+        test: /\.css?$/,
+        loader: 'style!css!',
+        include: path.join(__dirname, 'src', 'styles'),
+        use: [ 'style-loader', 'css-loader' ]
+      },
+      {
         test: /\.min.css?$/,
         loader: 'style!css!',
         include: path.join(__dirname, 'src', 'styles'),
