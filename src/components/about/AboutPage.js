@@ -3,7 +3,7 @@ import React from 'react';
 class AboutPage extends React.Component {
   render() {
     return (
-      <div>
+      <div className="container">
         <h1>Who Are We ?</h1>
         <div className="foodiesImages">
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4iNfJ7sFaOhH297Uv5uWR7x2yI32BUf3EQXikd6egiXgjlDoeww" className="foodiesImage"/>
