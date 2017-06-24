@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from "prop-types";
 import CatListRow from './CatListRow';
 
 const CatList = ({cats}) => {
@@ -10,7 +11,7 @@ const CatList = ({cats}) => {
         </tr>
       </thead>
       <tbody>
-        {cats.map(cat => 
+        {cats.map(cat =>
           <CatListRow key={cat.id} cat={cat} />
         )}
       </tbody>

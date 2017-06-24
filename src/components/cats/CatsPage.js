@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from "prop-types";
 import {Link, browserHistory} from 'react-router';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
@@ -38,8 +39,3 @@ function mapStateToProps(state, ownProps) {
 }
 
 export default connect(mapStateToProps)(CatsPage);
-
-
-
-
-

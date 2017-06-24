@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from "prop-types";
 import HobbyListRow from './HobbyListRow';
 
 const HobbyList = ({hobbies}) => {
@@ -12,7 +13,7 @@ const HobbyList = ({hobbies}) => {
           </tr>
         </thead>
         <tbody>
-          {hobbies.map(hobby => 
+          {hobbies.map(hobby =>
             <HobbyListRow key={hobby.id} hobby={hobby} />
           )}
         </tbody>

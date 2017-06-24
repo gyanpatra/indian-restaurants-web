@@ -4,7 +4,7 @@ import RadioGroup from '../common/radioGroup';
 
 
 const RestaurantControls = () => (
-  <div className="row">
+  <div className="row rest-control">
     <RadioGroup />
     <SelectBox />
   </div>

@@ -1,4 +1,4 @@
-.container {
+.container-gauri {
     position: relative;
     width: 400px;
     border-style: solid;
@@ -24,7 +24,7 @@
 .aboutWebsite{
   float: left;
 }
-.restaurantsControlBox{
+.restaurantsControl--Box{
   float: left;
   padding-right: 100px;
   width: 100%;
@@ -46,4 +46,20 @@
 }
 input[type="radio"] {
   margin-right: 10px;
+}
+.card-padding {
+  padding-bottom: 20px;
+}
+.header-row {
+  padding: 50px;
+}
+.fav-list-item {
+  border-color: orange;
+}
+.fav-card-item-header {
+  border-bottom-color: orange;
+  text-align: center;
+}
+.mile-selector-label {
+  padding: 10px;
 }

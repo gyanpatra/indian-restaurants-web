@@ -1,4 +1,5 @@
-  import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from "prop-types";
 
 class CheckBox extends React.Component {
   render() {
@@ -14,7 +15,7 @@ class CheckBox extends React.Component {
 }
 
 CheckBox.propTypes = {
-  item: PropTypes.object.isRequired, 
+  item: PropTypes.object.isRequired,
   handleChange: PropTypes.func.isRequired
 };
 

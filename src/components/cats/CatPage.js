@@ -1,17 +1,18 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from "prop-types";
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as catActions from '../../actions/catActions';
 import HobbyList from '../hobbies/HobbyList';
 import CatForm from './CatForm';
 import {browserHistory} from 'react-router';
-// import toastr from 'toastr'; 
+// import toastr from 'toastr';
 
 class CatPage extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      cat: Object.assign({}, this.props.cat), 
+      cat: Object.assign({}, this.props.cat),
       catHobbies: Object.assign([], [...this.props.catHobbies]),
       checkBoxHobbies: Object.assign([], [...this.props.checkBoxHobbies]),
       saving: false,
@@ -49,7 +50,7 @@ class CatPage extends React.Component {
     hobby['checked'] = !hobby.checked;
     if (checked) {
       cat.hobby_ids.push(hobby.id);
-    } else {  
+    } else {
       cat.hobby_ids.splice(cat.hobby_ids.indexOf(hobby.id));
     }
     this.setState({cat: cat});
@@ -68,7 +69,7 @@ class CatPage extends React.Component {
     this.setState({saving: true});
     this.props.actions.updateCat(this.state.cat);
 
-  } 
+  }
 
   deleteCat(event) {
     this.props.actions.deleteCat(this.state.cat)
@@ -83,13 +84,13 @@ class CatPage extends React.Component {
       return (
       <div>
         <h1>edit cat</h1>
-        <CatForm 
-          cat={this.state.cat} 
+        <CatForm
+          cat={this.state.cat}
           hobbies={this.state.checkBoxHobbies}
-          onSave={this.saveCat} 
-          onChange={this.updateCatState} 
+          onSave={this.saveCat}
+          onChange={this.updateCatState}
           onHobbyChange={this.updateCatHobbies}
-          saving={this.state.saving}/> 
+          saving={this.state.saving}/>
       </div>
       )
     }
@@ -154,7 +155,7 @@ function mapStateToProps(state, ownProps) {
     } else {
       checkBoxHobbies = hobbiesForCheckBoxes(stateHobbies)
     }
-  } 
+  }
     return {cat: cat, checkBoxHobbies: checkBoxHobbies, catHobbies: catHobbies};
 }
 
@@ -164,10 +165,3 @@ function mapDispatchToProps(dispatch) {
   };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(CatPage);
-
-
-
-
-
-
-

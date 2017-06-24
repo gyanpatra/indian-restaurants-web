@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from "prop-types";
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {browserHistory} from 'react-router';
@@ -28,7 +29,7 @@ class NewCatPage extends React.Component {
     hobby['checked'] = !hobby.checked;
     if (checked) {
       cat.hobby_ids.push(hobby.id);
-    } else {  
+    } else {
       cat.hobby_ids.splice(cat.hobby_ids.indexOf(hobby.id));
     }
 
@@ -54,13 +55,13 @@ class NewCatPage extends React.Component {
     // });
 
   }
-  
+
   render() {
     return (
       <div>
         <h1>new cat</h1>
-        <CatForm 
-          cat={this.state.cat} 
+        <CatForm
+          cat={this.state.cat}
           hobbies={this.props.checkBoxHobbies}
           onSave={this.saveCat}
           onChange={this.updateCatState}
@@ -78,7 +79,7 @@ function hobbiesForCheckBoxes(hobbies) {
 }
 
 NewCatPage.propTypes = {
-  checkBoxHobbies: PropTypes.array.isRequired, 
+  checkBoxHobbies: PropTypes.array.isRequired,
   actions: PropTypes.object.isRequired
 };
 
@@ -103,8 +104,3 @@ function mapDispatchToProps(dispatch) {
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewCatPage);
-
-
-
-
-
