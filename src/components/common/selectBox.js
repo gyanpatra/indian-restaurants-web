@@ -2,11 +2,13 @@ import React from 'react';
 import PropTypes from "prop-types";
 
 const SelectBox = ({label, milesOptions, handleChange}) => (
-  <div className="col-lg-6 col-sm-12">
+  <div className="col-lg-6 col-sm-12 ">
+    <div className="text-center">
        <label className="mile-selector-label">{label}</label>
        <select name="milesSelector" className="custom-select">
           {milesOptions.map((mileOption, i) => <option value={mileOption} key={i}>{mileOption}</option>)}
        </select>
+    </div>
    </div>
 );
 

@@ -21,7 +21,7 @@ class RestaurantsList extends Component {
 
     return (
       <div className="field">
-        <div className="container">
+        <div className="container-fluid">
           <div className="row">
             <div className="card-group">
                  {_renderList(restaurantDetails)}
