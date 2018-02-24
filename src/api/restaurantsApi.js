@@ -1,7 +1,12 @@
+
 class RestaurantsApi {
 
   static getRestaurantsForGivenGeo(geoInfo) {
-    const request = new Request('https://indian-restaurants-api.herokuapp.com/api/shops/restaurants/position', {
+    const queryParam = "?latitude="+geoInfo.latitude+"&longitude="+geoInfo.longitude;
+    const herokuAPIENDPOINT = "https://indian-restaurants-api.herokuapp.com/api/shops/restaurants/position"+queryParam;
+    const googleFireBaseAPIEndPoint = "https://us-central1-indian-restaurants-nearby.cloudfunctions.net/restaurantsApi"+queryParam;
+
+    const request = new Request(googleFireBaseAPIEndPoint, {
       method: 'POST',
       headers: new Headers({
         'Content-Type': 'application/json'
@@ -15,6 +20,15 @@ class RestaurantsApi {
 
 
     return fetch(request).then(response => {
+      return response.json();
+    }).catch(error => {
+      return error;
+    });
+  }
+
+  static getRestaurantsWithoutGeo() {
+    const url = "https://us-central1-indian-restaurants-nearby.cloudfunctions.net/restaurantsApiWithoutGeo";
+    return fetch(url).then(response => {
       return response.json();
     }).catch(error => {
       return error;

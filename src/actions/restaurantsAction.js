@@ -21,3 +21,16 @@ export function getRestaurantsForGivenGeo(latitude, longitude) {
     });
   };
 }
+
+export function getRestaurantsWithoutGeo() {
+  return (dispatch, getState) => {
+    return RestaurantsApi.getRestaurantsWithoutGeo()
+            .then(responseRestaurants => {
+              dispatch(getRestaurantsForGivenGeoSuccess(responseRestaurants, {}));
+              return responseRestaurants;
+            })
+            .catch(error => {
+              throw(error);
+            })
+  }
+}

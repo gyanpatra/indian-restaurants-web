@@ -8,20 +8,39 @@ import Restaurants from '../restaurants/restaurants';
 import RestaurantsList from '../restaurants/restaurantsList';
 import RetrieveGeolocation  from '../geolocation/retrieveGeolocation';
 import { handleGeolocationCoords } from '../../actions/geolocation';
+import { getRestaurantsWithoutGeo } from "../../actions/restaurantsAction"
 import '../../styles/home.css';
 
 class HomePage extends React.Component {
-  //<Link to="about" className="btn btn-primary btn-lg">Learn More</Link>
+  constructor(props) {
+    super(props);
+    //loading server side and then flip to client side
+    props.getRestaurantsWithoutGeo();
+  }
+
+
+  // The rendering happens with server side geolocation and then flips to client side geolocation
+  // In the constructor server side geolocation happens via props.getRestaurantsWithoutGeo() fetch restaurants
+  // and then <RetrieveGeolocation /> uses client side geo
   render() {
     const milesOptions = [5,10,50,100];
-    return (
-      <div className="">
+    const { restaurants } = this.props;
+    if(restaurants) {
+      return (
+        <div className="">
+          <RetrieveGeolocation handleGeolocationCoords={this.props.handleGeolocationCoords} />
+          <RestaurantControls />
+          <RestaurantsList restaurantDetails={this.props.restaurants}/>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          Hi Fetching restaurants for you . Hold tight.
+        </div>
+      );
+    }
 
-        <RetrieveGeolocation handleGeolocationCoords={this.props.handleGeolocationCoords} />
-        <RestaurantControls />
-        <RestaurantsList restaurantDetails={this.props.restaurants}/>
-      </div>
-    );
   }
 }
 
@@ -41,6 +60,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     handleGeolocationCoords: (coords) => {
       dispatch(handleGeolocationCoords(coords));
+    },
+    getRestaurantsWithoutGeo: () => {
+      dispatch(getRestaurantsWithoutGeo());
     }
   };
 };
