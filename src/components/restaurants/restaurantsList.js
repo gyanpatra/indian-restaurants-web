@@ -6,48 +6,26 @@ const _renderList = (restaurantDetails) =>  restaurantDetails.map((restaurantDet
     _renderSingleRestaurantAndItsFavItem(index, restaurantDetail)
 ));
 const _renderSingleRestaurantAndItsFavItem = (index, restaurantDetail)  => (
-  <div className="col-lg-6 col-xs-12 card-padding">
+  <div className="col-lg-4 col-xs-6 card-padding">
     <RestaurantFavItems key={index} {...restaurantDetail} />
   </div>
 );
 
-class RestaurantsList extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const { restaurantDetails } = this.props;
-
-    return (
-      <div className="field">
-        <div className="container-fluid">
-          <div className="row">
-            <div className="card-group">
-                 {_renderList(restaurantDetails)}
-            </div>
-          </div>
+const RestaurantsList = ({restaurantDetails}) => (
+  <div className="field">
+    <div className="container-fluid">
+      <div className="row">
+        <div className="card-group">
+             {_renderList(restaurantDetails)}
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  </div>
+);
+
 
 RestaurantsList.propTypes = {
-restaurantDetails: PropTypes.array.isRequired
-};
-
-RestaurantsList.defaultProps = {
-  restaurantDetails : [
-    {
-      restaurantName: "Saravana Bhavan",
-      favItems: ["Idly", "Dosa"]
-    },
-    {
-      restaurantName: "Madras Cafe",
-      favItems: ["Tomato Rice", "Malabar"]
-    }
-  ]
+  restaurantDetails: PropTypes.array.isRequired
 };
 
 export default RestaurantsList;

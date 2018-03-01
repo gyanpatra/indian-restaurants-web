@@ -13,13 +13,13 @@ class RetrieveGeolocation extends Component {
   }
 
   render() {
-    return <div></div>
+    return <div></div> ;
   }
 }
 
 RetrieveGeolocation.propTypes = {
   isGeolocationEnabled: PropTypes.bool,
-  //coords: PropTypes.object,
+  coords: PropTypes.object,
   handleGeolocationCoords: PropTypes.func
 } ;
 

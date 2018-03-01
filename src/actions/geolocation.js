@@ -2,7 +2,6 @@ import * as types from './actionTypes';
 import { getRestaurantsForGivenGeo } from "./restaurantsAction";
 
 export const handleGeolocationCoords = (coords) => {
-    console.log("In handleGeolocationCoords Action ", coords);
     return (dispatch, getState) => {
       dispatch(getRestaurantsForGivenGeo(coords.latitude, coords.longitude));
 
@@ -10,7 +9,7 @@ export const handleGeolocationCoords = (coords) => {
         type: types.RETRIEVED_GEOLOCATION_SUCCESSFULLY,
         latitude: coords.latitude,
         longitude: coords.longitude
-      }
+      };
     };
 };
 

@@ -1,27 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
 
-// const RadioGroup = ({label, cusineTypes, handleChange}) => (
-//   <div className="col-lg-6 ">
-//     <div className="col-lg-offset-3">
-//        <label className="radioLabel">{label}</label>
-//         {cusineTypes.map((cusineType, i) => {
-//           let checked = "false";
-//           if( i == 0) {
-//             checked = "checked";
-//           }
-//           return (
-//             <div key={i}>
-//               <input type="radio" className="radioButton" name="cusineType" checked={checked} value={cusineType} key={i}>{cusineType}</input>
-//               <br />
-//             </div>
-//           );
-//         }
-//       )}
-//       </div>
-//   </div>
-// );
-
 const RadioGroup = ({label, cusineTypes, handleChange}) => (
   <div className="col-lg-6 col-lg-offset-3 col-sm-12">
 

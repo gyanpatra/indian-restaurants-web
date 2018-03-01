@@ -7,7 +7,7 @@ export function getRestaurantsForGivenGeoSuccess(responseRestaurants, geoInfo) {
     type: types.GET_RESTAURANTS_FOR_GEO_SUCCESS,
     restaurants: responseRestaurants,
     geoInfo: geoInfo
-  }
+  };
 }
 
 export function getRestaurantsForGivenGeo(latitude, longitude) {
@@ -31,6 +31,6 @@ export function getRestaurantsWithoutGeo() {
             })
             .catch(error => {
               throw(error);
-            })
-  }
+            });
+  };
 }

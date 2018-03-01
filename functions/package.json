@@ -1,0 +1,22 @@
+{
+  "name": "restaurants-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build-funcs": "babel index.js --out-dir dist/functions"
+  },
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "firebase-admin": "^5.9.0",
+    "firebase-functions": "^0.8.1",
+    "mongoose": "^5.0.6",
+    "node-fetch": "^2.0.0",
+    "request-ip": "^2.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.40",
+    "@babel/preset-env": "^7.0.0-beta.40"
+  }
+}

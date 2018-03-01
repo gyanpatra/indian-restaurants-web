@@ -5,8 +5,6 @@
     margin-bottom: 20px;
 }
 .red {
-
-
     margin: 5px auto;
     border-bottom-style: solid;
     border-color: orange;
@@ -62,4 +60,7 @@ input[type="radio"] {
 }
 .mile-selector-label {
   padding: 10px;
+}
+.main-container {
+  padding: 0 45px;
 }
